@@ -11,7 +11,7 @@ const songReducer = () => {
 
 const SelectedSongReducer = (selectedSong = null, action) => {
   switch(action.type){
-    case 'SONG_SELECTED': 
+    case 'SONG_SELECTED':
       return action.payload;
     default:
       return selectedSong
