@@ -2,13 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 class SongList extends Component {
   render () {
-    console.log(this.props.selectedSong)
     const { songs } = this.props
     const songList = songs.map(song => {
       return (
         <div className="item" key={song.title}>
           <div className="right floated content">
-            <button className="ui button primary" onClick={this.props.selectedSong}>
+            <button className="ui button primary">
               Selet
             </button>
           </div>
@@ -28,11 +27,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  console.log(dispatch)
-  return {
-    selectedSong: (dispatch) => console.log(dispatch)
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SongList)
+export default connect(mapStateToProps)(SongList)
